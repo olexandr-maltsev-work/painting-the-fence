@@ -7,7 +7,7 @@ public class PaintCalculator {
 
     BigDecimal countWays(int n, int k) {
 
-        if (n < 1 && k < 1) {
+        if (n < 1 || k < 1) {
             throw new IllegalArgumentException("Posts and colors must be positive");
         }
         // There are k ways to color first post
@@ -18,12 +18,11 @@ public class PaintCalculator {
         BigDecimal diff = new BigDecimal(k);
 
         for (int i = 2; i <= n; i++) {
+
             // Current same is same as previous diff
             same = diff;
-
             // We always have k-1 choices for next post
             diff = total.multiply(new BigDecimal(k - 1));
-
             // Total choices till i.
             total = same.add(diff);
         }
