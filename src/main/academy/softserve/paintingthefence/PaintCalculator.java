@@ -39,6 +39,7 @@ public class PaintCalculator {
 
         System.out.print("Painting ways: ");
         System.out.println(paintCalculator.countWays(posts, colors));
+        scanner.close();
     }
 
     private static int checkInt(Scanner scanner) {
